@@ -10,7 +10,7 @@ const projects = [
         link: "https://sagerestaurant.netlify.app/",
         github: "https://github.com/YOUR_GITHUB_USERNAME/restaurant-website",
     },
-     {
+    {
         title: "Live Weather Application",
         description:
             "A responsive weather application that fetches real-time data using public APIs. Users can search cities and view current weather conditions with a clean UI.",
@@ -89,8 +89,15 @@ export const Projects = () => {
                                 />
 
                                 {/* Overlay Links */}
-                                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <a href={project.link} className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all">
+                                <div
+                                    className="absolute inset-0 flex items-center justify-center gap-4
+                                    opacity-100 md:opacity-0 md:group-hover:opacity-100
+                                    transition-opacity duration-300"
+                                >
+                                    <a href={project.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all">
                                         <ArrowUpRight className="w-5 h-5" />
                                     </a>
                                     <a href={project.github} className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all">
@@ -103,12 +110,14 @@ export const Projects = () => {
                             <div className="p-6 space-y-4">
                                 <div className="flex items-start justify-between">
                                     <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">{project.title}</h3>
-                                    <ArrowUpRight
-                                        className="w-5 h-5 
+                                    <a href={project.link}>
+                                        <ArrowUpRight
+                                            className="w-5 h-5 
                                      text-muted-foreground group-hover:text-primary
                                         group-hover:translate-x-1 
                                         group-hover:-translate-y-1 transition-all"
-                                    />
+                                        />
+                                    </a>
                                 </div>
 
                                 <p className="text-muted-foreground text-sm">
