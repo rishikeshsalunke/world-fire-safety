@@ -108,7 +108,7 @@ export const Hero = () => {
             </div>
 
           </div>
-          {/* Right Column - Profile Image */}
+          {/* Right Column - */}
           <div className="relative -mt-60 md:-mt-5 lg:mt-0 animate-fade-in animation-delay-300">
             {/* Profile video */}
             <div className="relative w-full max-w-xs md:max-w-sm ml-auto">
@@ -119,14 +119,21 @@ export const Hero = () => {
               to-primary/10 blur-2xl a  nimate-pulse"
               />
               <div className="relative glass rounded-3xl p-1 glow-border">
-                <video
+                {/* <video
                   src="/fire-safety-demo.mp4"
                   autoPlay
                   loop
                   muted
                   playsInline
                   className="w-full aspect-3/4 md:aspect-4/5 object-cover rounded-2xl"
+                /> */}
+
+                <img
+                  src="/fire-safety-hero.jpg"
+                  alt="Fire Safety Demo"
+                  className="w-full aspect-3/4 md:aspect-4/5 object-cover rounded-2xl"
                 />
+
 
 
 
