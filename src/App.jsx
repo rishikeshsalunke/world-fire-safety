@@ -1,8 +1,8 @@
 import { Hero } from "@/sections/Hero";
 import { About } from "@/sections/About";
-import { Projects } from "@/sections/Projects";
-import { Experience } from "@/sections/Experience";
-import { Testimonials } from "@/sections/Testimonials";
+import { Services } from "./sections/Services";
+import { Products } from "@/sections/Products";
+import { Vision } from "@/sections/Vision";
 import { Contact } from "@/sections/Contact";
 import { Navbar } from "@/layout/Navbar";
 import { Footer } from "./layout/Footer";
@@ -15,9 +15,9 @@ function App() {
       <main>
         <Hero />
         <About />
-        <Projects />
-        <Experience />
-        <Testimonials />
+        <Services />
+        <Products />
+        <Vision />
         <Contact />
       </main>
       <Footer />

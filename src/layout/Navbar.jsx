@@ -1,12 +1,16 @@
 import { Button } from "@/components/Button"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Flame } from "lucide-react"
 import { useEffect, useState } from "react";
+
 
 const navLinks = [
     { href: "#about", label: "About" },
-    { href: "#projects", label: "Projects" },
-    { href: "#experience", label: "Experience" },
+    { href: "#services", label: "Services" },
+    { href: "#products", label: "Products" },
+    { href: "#vision", label: "Vision & Mission" },
+    { href: "#contact", label: "Contact" },
 ];
+
 
 
 
@@ -31,14 +35,24 @@ export const Navbar = () => {
     }, [])
 
     return (
-        <header className={`fixed top-0 left-0 right-0 transition-all duration-500 ${isScrolled ? "glass-strong py-3" : "bg-transparent py-5"
+        <header className={`fixed top-0 left-0 right-0 transition-all duration-300 ${isScrolled
+            ? "bg-white/95 backdrop-blur border-b border-border shadow-sm py-3"
+            : "bg-transparent py-5"
             } z-50`}>
             <nav className="container mx-auto px-6 flex items-center justify-between">
-                <a href="#"
-                    className="text-2xl font-logo font-bold tracking-widest glow-text hover:text-primary hover:scale-105 transition-all duration-300"
+                <a
+                    href="#"
+                    onClick={() => setIsMobileOpen(false)}
+                    className="flex items-center gap-1 leading-none text-base md:text-2xl font-logo font-bold tracking-wide md:tracking-widest text-primary transition"
                 >
-                    RS<span className="text-primary">.</span>
+                    <Flame className="text-orange-400 w-4 h-4 md:w-6 md:h-6" />
+
+                    <span className="whitespace-nowrap">
+                        WORLD <span className="text-secondary">FIRE</span> SAFETY
+                    </span>
                 </a>
+
+
 
 
                 {/* Destop Nav */}
@@ -46,7 +60,7 @@ export const Navbar = () => {
                     <div className="glass rounded-full px-2 py-1 flex items-center gap-1">
                         {navLinks.map((link, index) => (
                             <a href={link.href} key={index}
-                                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-surface">
+                                className="px-4 py-2 text-sm text-foreground hover:text-primary rounded-full hover:bg-muted transition">
                                 {link.label}
                             </a>
                         ))}
@@ -55,14 +69,10 @@ export const Navbar = () => {
 
                 {/* CTA Button */}
                 <div className="hidden md:block">
-                    <Button
-                        size="sm"
-                        onClick={() => {
-                            window.location.hash = "contact";
-                        }}
-                    >
-                        Contact Me
+                    <Button size="sm" onClick={() => { window.location.hash = "contact"; }}>
+                        Contact Us
                     </Button>
+
                 </div>
 
 
@@ -77,14 +87,14 @@ export const Navbar = () => {
 
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
-                <div className="md:hidden glass-strong animate-fade-in">
+                <div className="md:hidden bg-white border-t border-border animate-fade-in">
                     <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
                         {navLinks.map((link, index) => (
                             <a
                                 href={link.href}
                                 key={index}
                                 onClick={() => setIsMobileOpen(false)}
-                                className="text-lg text-muted-foreground hover:text-foreground rounded-full py-2 ">
+                                className="text-lg text-foreground hover:text-primary py-2 transition rounded-full ">
                                 {link.label}
                             </a>
                         ))}
@@ -95,7 +105,7 @@ export const Navbar = () => {
                                 window.location.hash = "contact";
                             }}
                         >
-                            Contact Me
+                            Contact Us
                         </Button>
 
 

@@ -2,34 +2,37 @@
 
 
 @theme {
-  --color-background: #0b0f14;
-  --color-foreground: #e5e7eb;
+  /* BASE */
+  --color-background: #ffffff;
+  --color-foreground: #2b2b2b;
 
-  --color-card: #111827;
+  /* CARDS */
+  --color-card: #fafafa;
+  --color-surface: rgba(250, 250, 250, 0.9);
 
-  --color-primary: #38bdf8;
-
+  /* PRIMARY (Soft Dark Red) */
+  --color-primary: #b42323;
+  /* main text / headings */
   --color-primary-foreground: #ffffff;
 
-  --color-secondary: #1f2933;
-  --color-secondary-foreground: #38bdf8;
+  /* SECONDARY */
+  --color-secondary: #7f1d1d;
+  /* deeper red for hover */
+  --color-secondary-foreground: #b42323;
 
-  --color-muted: #1c2530;
-  --color-muted-foreground: #9ca3af;
+  /* MUTED */
+  --color-muted: #f3f4f6;
+  --color-muted-foreground: #6b7280;
 
-  --color-border: #1f2937;
+  --color-border: rgba(180, 35, 35, 0.2);
 
   --radius: 0.75rem;
 
-  --color-highlight: #facc15;
-
-  --color-surface: #111827;
+  /* OPTIONAL highlight */
+  --color-highlight: #fde047;
 
   --font-logo: "Orbitron", sans-serif;
-
-
 }
-
 
 
 @layer base {
@@ -37,47 +40,96 @@
     scroll-behavior: smooth;
   }
 
-  button {
-    cursor: pointer;
-  }
-
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: "Inter", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button {
+    cursor: pointer;
   }
 
   .font-serif {
     font-family: "Playfair Display", serif;
   }
-  .font-logo {
-  font-family: var(--font-logo);
-}
-}
 
+  .font-logo {
+    font-family: var(--font-logo);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    color: var(--color-primary);
+  }
+
+}
 
 @layer components {
-  .glass {
-    background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
-    backdrop-filter: blur(16px);
-    border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
 
+  /* Glass effect with red tint */
+  .glass {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--color-border);
   }
 
   .glass-strong {
-    background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
-    backdrop-filter: blur(24px);
-    border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
-
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--color-border);
   }
 
+
+  /* Fire-red glow text */
   .glow-text {
-    text-shadow: 0 0 30px color-mix(in srgb, var(--color-primary) 50%, transparent);
+    text-shadow:
+      0 0 5px var(--color-primary),
+      0 0 15px var(--color-primary),
+      0 0 25px color-mix(in srgb, var(--color-primary) 60%, transparent);
   }
 
   .glow-border {
-    box-shadow: 0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent),
-      inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  }
+
+}
+
+
+
+@layer components {
+
+  /* Glass effect with red tint */
+  .glass {
+    background-color: color-mix(in srgb, var(--color-surface) 40%, var(--color-background));
+    backdrop-filter: blur(16px);
+    border: 1px solid color-mix(in srgb, var(--color-primary) 20%, transparent);
+  }
+
+  .glass-strong {
+    background-color: color-mix(in srgb, var(--color-surface) 70%, var(--color-background));
+    backdrop-filter: blur(24px);
+    border: 1px solid color-mix(in srgb, var(--color-primary) 40%, transparent);
+  }
+
+  /* Fire-red glow text */
+  .glow-text {
+    text-shadow:
+      0 0 5px var(--color-primary),
+      0 0 15px var(--color-primary),
+      0 0 25px color-mix(in srgb, var(--color-primary) 60%, transparent);
+  }
+
+  /* Glow border for cards/buttons */
+  .glow-border {
+    box-shadow:
+      0 0 15px var(--color-primary),
+      inset 0 0 15px color-mix(in srgb, var(--color-primary) 50%, transparent);
   }
 }
 
@@ -88,14 +140,48 @@
     from {
       opacity: 0;
       transform: translateY(20px);
-      filter: blur(10px);
+      filter: blur(5px);
     }
 
     to {
       opacity: 1;
-      transform: translateY(0px);
+      transform: translateY(0);
       filter: blur(0);
     }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out both;
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
   }
 
   @keyframes slow-drift {
@@ -118,27 +204,6 @@
     }
   }
 
-  @keyframes float {
-
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-
-  @keyframes marquee {
-    0% {
-      transform: translateX(0);
-    }
-
-    100% {
-      transform: translateX(-50%);
-    }
-  }
 
   .animate-fade-in {
     animation: fade-in 0.8s ease-out both;
@@ -182,6 +247,7 @@
 
 
 
+  /* Animated borders */
   @keyframes animated-border {
     0% {
       stroke-dashoffset: 400;
@@ -194,17 +260,19 @@
 
   .group:hover .animated-border-path {
     animation: animated-border 1.5s linear infinite;
+    stroke: var(--color-primary);
   }
 
   .animated-border:hover {
-    background-color: color-mix(in srgb, var(--color-primary) 15%, transparent);
+    background-color: color-mix(in srgb, var(--color-primary) 15%, var(--color-background));
     backdrop-filter: blur(16px);
-    box-shadow: 0 0 30px color-mix(in srgb, var(--color-primary) 30%, transparent);
+    box-shadow: 0 0 30px color-mix(in srgb, var(--color-primary) 50%, transparent);
   }
-
 
   .timeline-glow {
-    box-shadow: 0 0 40px color-mix(in srgb, var(--color-primary) 35%, transparent),
+    box-shadow:
+      0 0 40px color-mix(in srgb, var(--color-primary) 35%, transparent),
       0 0 80px color-mix(in srgb, var(--color-primary) 25%, transparent);
   }
+
 }
