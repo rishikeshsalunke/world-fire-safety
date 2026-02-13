@@ -43,10 +43,9 @@ export const Navbar = () => {
                 <a
                     href="#"
                     onClick={() => setIsMobileOpen(false)}
-                    className="flex items-center gap-1 leading-none text-base md:text-2xl font-logo font-bold tracking-wide md:tracking-widest text-primary transition"
+                    className="flex items-center gap-1 leading-none text-xs md:text-xl font-logo font-bold tracking-wide md:tracking-widest text-primary transition"
                 >
                     <Flame className="text-orange-400 w-4 h-4 md:w-6 md:h-6" />
-
                     <span className="whitespace-nowrap">
                         WORLD <span className="text-secondary">FIRE</span> SAFETY SYSTEM
                     </span>
