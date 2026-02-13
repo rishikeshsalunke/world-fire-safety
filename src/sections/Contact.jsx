@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/Button";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 
 const contactInfo = [
@@ -41,6 +42,8 @@ const contactInfo = [
 ];
 
 export const Contact = () => {
+    const navigate = useNavigate();
+
     const [formData, setFormData] = useState({
         name: "",
         phone: "",
@@ -93,6 +96,8 @@ ${formData.message}
                 message: "Thank you! Our team will contact you shortly.",
             });
             setFormData({ name: "", phone: "", email: "", message: "" });
+
+            navigate("/thank-you");
         } catch (err) {
             console.error("EmailJS error:", err);
             setSubmitStatus({
@@ -103,6 +108,9 @@ ${formData.message}
         } finally {
             setIsLoading(false);
         }
+
+        
+
     };
     return (
         <section id="contact" className="py-32 relative overflow-hidden scroll-mt-32">

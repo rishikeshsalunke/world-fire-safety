@@ -48,7 +48,7 @@ export const Navbar = () => {
                     <Flame className="text-orange-400 w-4 h-4 md:w-6 md:h-6" />
 
                     <span className="whitespace-nowrap">
-                        WORLD <span className="text-secondary">FIRE</span> SAFETY
+                        WORLD <span className="text-secondary">FIRE</span> SAFETY SYSTEM
                     </span>
                 </a>
 
