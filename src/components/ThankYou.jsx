@@ -5,7 +5,7 @@ export default function ThankYou() {
     setTimeout(() => {
       if (window.gtag) {
         window.gtag('event', 'conversion', {
-          send_to: 'AW-11464426889/w-ynCOP4nY4ZEImL1doq'
+          send_to: 'AW-11464426889/0DR3CJmSn_kbEImL1doq'
         });
         console.log("Google Ads conversion fired");
       } else {
