@@ -2,12 +2,16 @@ import { useEffect } from "react";
 
 export default function ThankYou() {
   useEffect(() => {
-
-    if (window.gtag) {
-      window.gtag('event', 'conversion', {
-        send_to: 'AW-11464426889/w-ynCOP4nY4ZEImL1doq'
-      });
-    }
+    setTimeout(() => {
+      if (window.gtag) {
+        window.gtag('event', 'conversion', {
+          send_to: 'AW-11464426889/w-ynCOP4nY4ZEImL1doq'
+        });
+        console.log("Google Ads conversion fired");
+      } else {
+        console.log("gtag not found");
+      }
+    }, 1000); // wait 1 second
   }, []);
 
   return (
