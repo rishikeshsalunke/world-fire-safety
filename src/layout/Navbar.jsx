@@ -41,15 +41,22 @@ export const Navbar = () => {
             } z-50`}>
             <nav className="container mx-auto px-6 flex items-center justify-between">
                 <a
-                    href="#"
+                    href="/"
                     onClick={() => setIsMobileOpen(false)}
-                    className="flex items-center gap-1 leading-none text-xs md:text-xl font-logo font-bold tracking-wide md:tracking-widest text-primary transition"
+                    className="flex items-center gap-2 md:gap-3 leading-none font-logo font-bold tracking-wide text-primary transition hover:opacity-90"
                 >
-                    <Flame className="text-orange-400 w-4 h-4 md:w-6 md:h-6" />
-                    <span className="whitespace-nowrap">
-                        WORLD <span className="text-secondary">FIRE</span> SAFETY SYSTEM
+                    <div className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-lg bg-primary/10">
+                        <Flame className="text-orange-500 w-4 h-4 md:w-6 md:h-6" />
+                    </div>
+
+                    <span className="whitespace-nowrap text-sm md:text-xl">
+                        WORLD <span className="text-secondary">FIRE</span>
+                        <span className="block text-[10px] md:text-xs tracking-widest text-muted-foreground">
+                            SAFETY SYSTEM
+                        </span>
                     </span>
                 </a>
+
 
 
 

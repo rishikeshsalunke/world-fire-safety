@@ -79,14 +79,8 @@ export const Contact = () => {
                 {
                     name: formData.name,
                     email: formData.email,
-                    message: `
-Name: ${formData.name}
-Phone: ${formData.phone}
-Email: ${formData.email}
-
-Requirement:
-${formData.message}
-`,
+                    phone: formData.phone,
+                    message: formData.message,
                 },
                 publicKey
             );
@@ -109,7 +103,7 @@ ${formData.message}
             setIsLoading(false);
         }
 
-        
+
 
     };
     return (

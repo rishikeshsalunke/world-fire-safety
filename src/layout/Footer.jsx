@@ -25,12 +25,23 @@ export const Footer = () => {
           {/* Brand */}
           <div className="space-y-4 text-center lg:text-left">
 
-            <div className="flex items-center justify-center lg:justify-start gap-2">
-              <Flame className="text-orange-400 w-5 h-5 md:w-6 md:h-6" />
-              <h2 className="text-lg md:text-2xl font-bold">
-                WORLD FIRE <span className="text-primary">SAFETY SYSTEM</span>
-              </h2>
-            </div>
+            <a
+              href="/"
+              onClick={() => setIsMobileOpen(false)}
+              className="flex items-center gap-2 md:gap-3 leading-none font-logo font-bold tracking-wide text-primary transition hover:opacity-90"
+            >
+              <div className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-lg bg-primary/10">
+                <Flame className="text-orange-500 w-4 h-4 md:w-6 md:h-6" />
+              </div>
+
+              <span className="whitespace-nowrap text-sm md:text-xl">
+                WORLD <span className="text-secondary">FIRE</span>
+                <span className="block text-[10px] md:text-xs tracking-widest text-muted-foreground">
+                  SAFETY SYSTEM
+                </span>
+              </span>
+            </a>
+
 
             <p className="text-muted-foreground  text-xs md:text-sm leading-relaxed max-w-md mx-auto lg:mx-0">
               Complete fire protection solutions including extinguisher supply,
