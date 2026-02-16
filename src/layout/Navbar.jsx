@@ -75,16 +75,25 @@ export const Navbar = () => {
 
                 {/* CTA Button */}
                 <div className="hidden md:block">
-                    <Button size="sm" onClick={() => { window.location.hash = "contact"; }}>
+                    <Button
+                        size="sm"
+                        onClick={() => {
+                            setIsMobileOpen(false);
+                            document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                        }}
+                    >
                         Contact Us
                     </Button>
+
 
                 </div>
 
 
                 {/* MObile Menu Button */}
-                <button className="md:hidden p-2 text-foreground cursor-pointer"
-                    onClick={() => setIsMobileOpen((prev) => !prev)}>
+                <button
+                    className="md:hidden p-2 text-foreground cursor-pointer"
+                    onClick={() => setIsMobileOpen(prev => !prev)}
+                >
                     {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
 
@@ -108,11 +117,17 @@ export const Navbar = () => {
                             size="sm"
                             onClick={() => {
                                 setIsMobileOpen(false);
-                                window.location.hash = "contact";
+
+                                setTimeout(() => {
+                                    document
+                                        .getElementById("contact")
+                                        ?.scrollIntoView({ behavior: "smooth" });
+                                }, 100);
                             }}
                         >
                             Contact Us
                         </Button>
+
 
 
                     </div>
