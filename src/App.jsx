@@ -3,6 +3,7 @@ import { Hero } from "@/sections/Hero";
 import { About } from "@/sections/About";
 import { Services } from "@/sections/Services";
 import { Products } from "@/sections/Products";
+import { Spares } from "@/sections/Spares";
 import { Vision } from "@/sections/Vision";
 import { Contact } from "@/sections/Contact";
 import { Navbar } from "@/layout/Navbar";
@@ -23,6 +24,7 @@ function App() {
                 <About />
                 <Services />
                 <Products />
+                <Spares />
                 <Vision />
                 <Contact />
               </main>
