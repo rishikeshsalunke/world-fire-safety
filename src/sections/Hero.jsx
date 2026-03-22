@@ -11,9 +11,9 @@ import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-[90vh] md:min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-[90vh]  md:min-h-screen flex items-center overflow-hidden">
       Bg
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 ">
         {/* <img
           // src="/fire-safety-hero.jpg"
           alt="Fire Safety"
@@ -24,7 +24,7 @@ export const Hero = () => {
       </div>
 
       {/* Green Dots */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 overflow-hidden  pointer-events-none">
         {[...Array(30)].map((_, i) => (
           <div
             className="absolute w-1.5 h-1.5 rounded-full opacity-60"
@@ -41,7 +41,7 @@ export const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 md:px-6 pt-32 md:pt-45 pb-16 md:pb-20 relative z-10">
+      <div className="container mx-auto px-4 md:px-10  pt-32 md:pt-45 pb-16 md:pb-20 relative z-10">
         <div className="grid grid-cols-2 lg:grid-cols-2 gap-1 md:gap-12 items-center">
           {/* Left Column - Text Content */}
           <div className="space-y-6 pr-4">
