@@ -31,7 +31,7 @@ const services = [
 export const Services = () => {
   return (
     <section id="services" className="py-20 md:py-32 relative overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto px-4 md:px-10">
 
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">

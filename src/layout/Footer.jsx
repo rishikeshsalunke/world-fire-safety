@@ -13,7 +13,7 @@ export const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative pt-16 md:pt-24 pb-8 md:pb-10 border-t border-primary/20 overflow-hidden">
+    <footer className="relative pt-16 md:pt-24 pb-8 md:pb-10 border-t md:left-10 border-primary/20 overflow-hidden">
 
       {/* Glow */}
       <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-72 h-72 md:w-150 md:h-75 bg-primary/10 blur-3xl rounded-full" />
@@ -28,7 +28,7 @@ export const Footer = () => {
             <a
               href="/"
               onClick={() => setIsMobileOpen(false)}
-              className="flex items-center gap-2 md:gap-3 leading-none font-logo font-bold tracking-wide text-primary transition hover:opacity-90"
+              className="flex items-center justify-center lg:justify-start gap-2 md:gap-3 leading-none font-logo font-bold tracking-wide text-primary transition hover:opacity-90"
             >
               <div className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-lg bg-primary/10">
                 <Flame className="text-orange-500 w-4 h-4 md:w-6 md:h-6" />
@@ -43,7 +43,7 @@ export const Footer = () => {
             </a>
 
 
-            <p className="text-muted-foreground  text-xs md:text-sm leading-relaxed max-w-md mx-auto lg:mx-0">
+            <p className="text-muted-foreground text-xs md:text-sm leading-relaxed max-w-55 md:max-w-md mx-auto lg:mx-0 text-center lg:text-left">              
               Complete fire protection solutions including extinguisher supply,
               refilling, hydrant systems, alarms and Fire NOC assistance.
               Serving Ulhasnagar & nearby regions.
