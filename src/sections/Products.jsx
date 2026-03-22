@@ -27,6 +27,30 @@ const products = [
     size: "Custom Setup",
   },
   {
+    name: "Fire Hydrant Valve",
+    description:
+      "Durable landing valve used to control water flow in fire hydrant systems. Ensures quick and reliable firefighting operations.",
+    image: "/products/hydrantvalve.jpg",
+    category: "Fire Hydrant Valve",
+    size: "Custom Setup",
+  },
+  {
+    name: "Hose Reel Drum",
+    description:
+      "Wall-mounted hose reel drum designed for easy handling and quick deployment of water during fire emergencies.",
+    image: "/products/hosereel.jpg",
+    category: "Hose Reel Drum",
+    size: "Custom Setup",
+  },
+  {
+    name: "RRL Hose Pipe",
+    description:
+      "Reinforced Rubber Lined (RRL) hose pipe built for high-pressure water flow, ideal for firefighting and industrial use.",
+    image: "/products/hosepipe.jpg",
+    category: "RRL Hose Pipe",
+    size: "Custom Setup",
+  },
+  {
     name: "Fire Alarm System",
     description:
       "Addressable & conventional alarm panels with smoke detectors and manual call points.",
@@ -50,6 +74,7 @@ const products = [
     category: "Accessories",
     size: "Multiple",
   },
+
 ];
 
 
