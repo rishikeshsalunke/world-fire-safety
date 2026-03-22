@@ -41,7 +41,7 @@ export const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 md:px-10  pt-32 md:pt-45 pb-16 md:pb-20 relative z-10">
+      <div className="container mx-auto px-4 md:px-15  pt-32 md:pt-45 pb-16 md:pb-20 relative z-10">
         <div className="grid grid-cols-2 lg:grid-cols-2 gap-1 md:gap-12 items-center">
           {/* Left Column - Text Content */}
           <div className="space-y-6 pr-4">
